@@ -16,6 +16,10 @@ echo "-----> Found an icecast.xml file"
 if [ ! -s $1/config/icecast.xml ]; then
   echo "icecast.xml was empty"
   exit 1
-else
-  exit 0
 fi
+
+echo "listenting on ${PORT}"
+echo 'Substituting' | indent
+echo $1/config/icecast.xml | indent
+sed -i 's/__PORT__/'\$PORT'/' $1/config/icecast.xml
+exit 0
