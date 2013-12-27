@@ -1,7 +1,5 @@
 #!/bin/sh -e
 
-echo "listenting on ${PORT}"
-
 cat << EOF
 ---
 config_vars:
